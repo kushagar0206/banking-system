@@ -1,18 +1,20 @@
 package com.kushagar0206.bankingsystem.service;
 
 import com.kushagar0206.bankingsystem.dto.userDto;
-import org.springframework.stereotype.Service;
+import com.kushagar0206.bankingsystem.model.User;
+
+import java.util.List;
 
 public interface BankingService {
 
-    public void addUser(userDto userDto);
+    User addUser(userDto userDto);
 
-    public void gatAllUser();
+    List<User> gatAllUser();
 
-    public void getUserById();
+    userDto getUserById(Long id);
 
-    public void updateUser();
+    void updateUser();
 
-    public void deleteUser();
+     void deleteUser();
 
 }
