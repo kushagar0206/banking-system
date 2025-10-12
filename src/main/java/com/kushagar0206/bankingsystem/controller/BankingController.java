@@ -1,23 +1,28 @@
 package com.kushagar0206.bankingsystem.controller;
 
+import com.kushagar0206.bankingsystem.dto.userDto;
 import com.kushagar0206.bankingsystem.service.BankingServiceImpl;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/user")
-@AllArgsConstructor
 public class BankingController {
 
     public BankingServiceImpl bankingserviceimpl;
 
+    public BankingController(BankingServiceImpl bankingserviceimpl) {
+        this.bankingserviceimpl = bankingserviceimpl;
+    }
+
     @PutMapping("/add")
-    public void addUser(){
-        bankingserviceimpl.addUser(long id, String name, String mobileNo, String email);
+    public void addUser(userDto userdto){
 
     }
 
-@GetMapping("/all")
+
+
+    @GetMapping("/all")
     public void getAllUser(){
 
 
