@@ -17,6 +17,7 @@ public class User {
 
     private String name;
 
+    @Column(name = "monile_no")
     private String mobileNo;
 
     private String email;
