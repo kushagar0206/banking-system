@@ -1,7 +1,6 @@
 package com.kushagar0206.bankingsystem.controller;
 
-import com.kushagar0206.bankingsystem.dto.userDto;
-import com.kushagar0206.bankingsystem.model.User;
+import com.kushagar0206.bankingsystem.dto.UserDto;
 import com.kushagar0206.bankingsystem.service.BankingServiceImpl;
 import org.springframework.web.bind.annotation.*;
 
@@ -18,32 +17,28 @@ public class BankingController {
     }
 
     @PostMapping("/add")
-    public User addUser(@RequestBody userDto userdto){
+    public UserDto addUser(@RequestBody UserDto userdto){
     return bankingserviceimpl.addUser(userdto);
     }
 
-
-
-    @GetMapping("/all")
-    public void getAllUser(){
+    @GetMapping("/get")
+    public List<UserDto> getAllUser(){
+       return bankingserviceimpl.gatAllUser();
     }
 
-@GetMapping("/{id}")
-public void getUserById(@PathVariable long id){
+    @GetMapping("/get/{id}")
+    public UserDto getUserById(@PathVariable Long id){
+        return bankingserviceimpl.getUserById(id);
+    }
 
+    @PutMapping("/update/{id}")
+    public UserDto updateUser(@PathVariable Long id, @RequestBody UserDto userDto){
+        return bankingserviceimpl.updateUser(id, userDto);
+    }
 
-}
-
-@PutMapping("/Update")
-    public void updateUser(){
-
-
-}
-
-@DeleteMapping("/delete{id}")
-    public void deleteUser(@PathVariable long id){
-
-
-}
+    @DeleteMapping("/delete/{id}")
+    public String deleteUser(@PathVariable long id){
+        return bankingserviceimpl.deleteUser(id);
+    }
 
 }

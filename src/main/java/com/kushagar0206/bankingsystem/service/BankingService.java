@@ -1,20 +1,20 @@
 package com.kushagar0206.bankingsystem.service;
 
-import com.kushagar0206.bankingsystem.dto.userDto;
+import com.kushagar0206.bankingsystem.dto.UserDto;
 import com.kushagar0206.bankingsystem.model.User;
 
 import java.util.List;
 
 public interface BankingService {
 
-    User addUser(userDto userDto);
+    UserDto addUser(UserDto userDto);
 
-    List<User> gatAllUser();
+    List<UserDto> gatAllUser();
 
-    userDto getUserById(Long id);
+    UserDto getUserById(Long id);
 
-    void updateUser();
+    UserDto updateUser(Long id, UserDto userDto);
 
-     void deleteUser();
+     String deleteUser(Long id);
 
 }

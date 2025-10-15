@@ -2,11 +2,14 @@ package com.kushagar0206.bankingsystem.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.NoArgsConstructor;
 
 @Data
-public class userDto {
+@NoArgsConstructor
+@AllArgsConstructor
+public class UserDto {
+
+    private Long id;
 
     private String name;
 
