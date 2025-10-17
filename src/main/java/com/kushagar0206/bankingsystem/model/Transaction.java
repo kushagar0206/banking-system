@@ -1,13 +1,10 @@
 package com.kushagar0206.bankingsystem.model;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.springframework.format.annotation.DateTimeFormat;
+import java.time.LocalDateTime;
 
 @Entity
 @Data
@@ -15,7 +12,7 @@ import org.springframework.format.annotation.DateTimeFormat;
 @AllArgsConstructor
 public class Transaction {
 
-    @id
+    @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
@@ -25,11 +22,10 @@ public class Transaction {
 
     private String reciever;
 
-    @Column(name = "credit/debit")
-    private String crDr;
+    private String type;
 
     @Column(name = "current_balance")
     private double currentBalance;
 
-    private DateTimeFormat date;
+    private LocalDateTime date = LocalDateTime.now();
 }

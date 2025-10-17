@@ -21,11 +21,11 @@ public class UserServiceImpl implements UserService {
     }
 
     private User convertToEntity(UserDto userDto){
-        User user = new User(userDto.getId(), userDto.getName(), userDto.getMobileNo(), userDto.getEmail());
-//        user.setId(userDto.getId());
-//        user.setName(userDto.getName());
-//        user.setMobileNo(userDto.getMobileNo());
-//        user.setName(userDto.getEmail());
+        User user = new User();
+        user.setId(userDto.getId());
+        user.setName(userDto.getName());
+        user.setMobileNo(userDto.getMobileNo());
+        user.setName(userDto.getEmail());
         return user;
     }
 

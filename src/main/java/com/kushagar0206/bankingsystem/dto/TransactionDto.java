@@ -1,13 +1,11 @@
 package com.kushagar0206.bankingsystem.dto;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
 import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.Generated;
 import lombok.NoArgsConstructor;
 import org.springframework.format.annotation.DateTimeFormat;
+
+import java.time.LocalDateTime;
 
 @Data
 @NoArgsConstructor
@@ -22,11 +20,11 @@ public class TransactionDto {
 
     private String reciever;
 
-    private String crDr;
+    private String type;
 
     private double currentBalance;
 
-    private DateTimeFormat date;
+    private LocalDateTime date;
 
 
 
